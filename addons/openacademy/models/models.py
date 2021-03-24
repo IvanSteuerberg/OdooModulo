@@ -5,7 +5,6 @@ from datetime import timedelta
 from odoo import models, fields, api, exceptions, _
 
 
-
 class Course(models.Model):
     _name = 'openacademy.course'
 
@@ -122,4 +121,3 @@ class Session(models.Model):
         for r in self:
             if r.instructor_id and r.instructor_id in r.attendee_ids:
                 raise exceptions.ValidationError(_("A session's instructor can't be an attendee"))
-
