@@ -17,7 +17,7 @@
     # Check https://github.com/odoo/odoo/blob/14.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
     'category': 'Education',
-    'version': '0.7',
+    'version': '0.15',
 
     # any module necessary for this one to work correctly
     'depends': ['base'],
@@ -30,6 +30,8 @@
         'views/templates.xml',
         'views/openacademy.xml',
         'views/partner.xml',
+        'reports.xml',
+
     ],
     # only loaded in demonstration mode
     'demo': [
