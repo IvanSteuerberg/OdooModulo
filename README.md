@@ -2,11 +2,12 @@
 Modulo de Odoo que contiene Cursos con Sesiones y asistentes
 
 Contiene:
--Caliendario
+-Calendario
 -Graficos
 -Dashboad
 -Kanban
 -Vistas organizadas
+-Informes (PDFs)
 
 (Para más información, consultar commits)
 ![image](https://user-images.githubusercontent.com/55792935/112314269-1edb9200-8ca9-11eb-8e64-1cac90fa2630.png)
