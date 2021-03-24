@@ -61,6 +61,9 @@ class Session(models.Model):
     end_date = fields.Date(string="End Date", store=True,
         compute='_get_end_date', inverse='_set_end_date')
 
+    attendees_count = fields.Integer(
+        string="Attendees count", compute='_get_attendees_count', store=True)
+
     @api.depends('start_date', 'duration')
     def _get_end_date(self):
         for r in self:
@@ -81,6 +84,11 @@ class Session(models.Model):
             # Compute the difference between dates, but: Friday - Monday = 4 days,
             # so add one day to get 5 days instead
             r.duration = (r.end_date - r.start_date).days + 1
+
+    @api.depends('attendee_ids')
+    def _get_attendees_count(self):
+        for r in self:
+            r.attendees_count = len(r.attendee_ids)
 
     @api.depends('seats', 'attendee_ids')
     def _taken_seats(self):
